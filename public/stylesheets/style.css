@@ -1,8 +1,41 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.pvs,.pts{
+	padding-top: 5px;
+	
 }
-
-a {
-  color: #00B7FF;
+.pbs,.pvs{
+	padding-bottom: 5px;
+}
+.navbar-brand{
+	height: auto;
+	padding: 5px;
+	padding-left: 35px;
+}
+.navbar-brand span{
+	font-family:"Audiowide";
+	margin-left:10px;
+	font-weight:bold;
+	font-size: 28px;
+	vertical-align: middle;
+}
+.dispBlock{
+	display: block !important
+}
+.dispInlineBlock{
+	display: inline-block !important
+}
+.dispInline{
+	display: inline !important
+}
+.navbar-default{
+    background-color: #25021F;
+    opacity: 0.8;
+}
+.navbar-default .navbar-brand,.navbar-default .navbar-nav > li > a  {
+    color: #DEDADA;
+}
+.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:hover{
+	color: #DEDADA;
+}
+.navbar-default .navbar-nav > li > a:hover,.navbar-default .navbar-nav > li > a:focus  {
+    color: #BBB3B3;
 }
