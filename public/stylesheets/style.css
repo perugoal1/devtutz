@@ -1,3 +1,9 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	background-color: #00b5ec;
+}
 .pvs,.pts{
 	padding-top: 5px;
 	
@@ -27,15 +33,106 @@
 	display: inline !important
 }
 .navbar-default{
-    background-color: #25021F;
-    opacity: 0.8;
+    /* background-color: #25021F; */
+    background-color: #00b5ec;
+   	border: none;
+   	border-radius: 0;
+    z-index: 1;
+    margin-bottom: 0;
 }
 .navbar-default .navbar-brand,.navbar-default .navbar-nav > li > a  {
-    color: #DEDADA;
+    color: #fff200;
 }
 .navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:hover{
-	color: #DEDADA;
+	color: #fff;
 }
 .navbar-default .navbar-nav > li > a:hover,.navbar-default .navbar-nav > li > a:focus  {
-    color: #BBB3B3;
+    color: #efefef;
+}
+.navbar-nav .dropdown-menu li a{
+	padding-top:7px;
+	padding-bottom:7px;
+}
+.navbar-nav .dropdown-menu li a:hover,.navbar-nav .dropdown-menu li a:focus{
+	border-left: 3px solid #fff200;
+    border-right: 3px solid #fff200;
+    outline: none;
+}
+.navbar-nav .dropdown-menu,.navbar-nav .dropdown-menu li.divider{
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+.navbar-brand{
+    background-color: #fff200;
+    color: #403D3D !important;
+    padding-right: 30px;
+}
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus{
+	background-color: #fff200;
+}
+.top-section{
+	 background:url("/img/topBg.jpg")  no-repeat center center fixed;
+	 background-size:100% 100%;
+	 padding: 0;
+	 height:auto;
+	 padding-bottom: 40px;
+}
+.group-tiles{ 
+	text-align:center;
+	margin: auto;
+    margin-top: 80px;
+}
+.tile{
+	height: 150px;
+	width: 150px;
+	margin: 3px;
+	background-color: blue;
+	display : inline-block;
+	/* border-radius: 15px; */
+	box-shadow: 0px 0px 13px 4px #D2D2CA;
+	border: 2px solid #CAD4CB;
+	text-decoration: none;
+	transition: 1s;
+}
+.tile:hover,.tile:focus{
+	box-shadow: 0px 0px 56px 15px #D2D2CA;
+	text-decoration: none;
+}
+.tile:nth-child(2n) {
+	background-color: #E55525;
+	color: #fff
+}
+.tile:nth-child(2n+1) {
+	background-color: #95368C;
+	color: #fff
+}
+.tile:nth-child(3n) {
+	background-color: #6FBE4A;
+	color: #fff
+}
+.tile:nth-child(4n+4) {
+	background-color: #00AADD;
+	color: #fff
+}
+@media screen and (min-width: 1360px){
+	.group-tiles{ 
+		width: 1200px
+	}
+}
+.navbar-form button{
+	background: #fff200
+}
+.svg-tut{
+	height: auto;
+	padding-top: 40px;
+	padding-bottom: 40px;
+	text-align: center;
+	border-top: 4px solid #fff200;
+	border-bottom: 4px solid #fff200;
+	
+}
+.svg-tut img{
+	border-radius: 50px;
 }
