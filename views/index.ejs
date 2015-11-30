@@ -8,16 +8,17 @@
     <link rel="shortcut icon" href="/img/logofavicon.png" type="image/png">
     
     <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-ui-router.min.js"></script>
    	<script src="/js/jquery-1.11.3.min.js"></script>
    	<script src="/js/bootstrap.js"></script>
    	<script src="/js/home.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
  </head>
-  <body >
+  <body ng-app="dvtzApp">
    	<nav class="navbar navbar-default">   	
    		<div class="container-fluid">
 	   		<div class="navbar-header">
-		      <a class="navbar-brand" href="#"><img class="dispInlineBlock" src="/img/logo1.png" height="40" width="40"/><span>DevTutz</span></a>
+		      <a class="navbar-brand" href="/home"><img class="dispInlineBlock" src="/img/logo1.png" height="40" width="40"/><span>DevTutz</span></a>
 		    </div>
 		    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 	   		<ul class="nav navbar-nav">
@@ -44,52 +45,6 @@
 	      </div>
    		</div>
    	</nav>
-   	
-   	<section class="container-fluid top-section">
-   		<div class="group-tiles row">
-   				<a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a>
-   				<a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a>
-   			</div>
-   	</section>
-   	
-   	<div class="svg-tut row">
-   		<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In  -->
-		<img alt="Web Concept" src="/img/tutsSvg.svg" class="col-xs-8 col-xs-offset-2 col-lg-6 col-lg-offset-3">
-   	</div>
-   	
-   	<div class="tut-list">
-   	
-   	
-   	</div>
+   	<div ui-view></div>
   </body>
 </html>
