@@ -9,5 +9,9 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 		url:"/home",
 		templateUrl :"/partials/initial.html"
 	})
+	.state("catList",{
+		url:'/catList',
+		templateUrl:"/partials/categoryList.html"
+	})
 	
 }]);

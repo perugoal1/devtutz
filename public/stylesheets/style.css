@@ -83,7 +83,7 @@ body{
 	 padding-bottom: 40px;
 }
 .bottom-section{
-	background:url("/img/bottomBg1.jpg")  no-repeat center center fixed;
+	background: #524C4E/* url("/img/bottomBg1.jpg")  no-repeat center center fixed */;
 	background-size:100% 100%;
 	padding: 0;
 	height:auto;
