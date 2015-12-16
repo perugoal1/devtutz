@@ -13,5 +13,8 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 		url:'/catList',
 		templateUrl:"/partials/categoryList.html"
 	})
-	
+	.state("tutorials",{
+		url:'/tutorials',
+		templateUrl:"/partials/tutDetails.html"
+	})
 }]);
