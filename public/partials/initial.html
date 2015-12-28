@@ -1,36 +1,8 @@
 <section class="container-fluid top-section">
    		<div class="group-tiles row">
-   				<a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a>
-   				<a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
-   				</a><a class="tile" href="#">
-	   				<h3>Tile 1</h3>
-	   				<p>This tile is awesome</p>
+   				<a class="tile" href="#" ng-repeat="model in models | limitTo  :10">
+	   				<h3>{{model.mainheading}}</h3>
+	   				<p>{{model.desc}}</p>
    				</a>
    			</div>
    	</section>
@@ -44,35 +16,16 @@
    		<div class="col-sm-2 lft-side">
    			<ul class="nav of nav-stacked">
               <li class="tq">Category</li>
-              <li class="active">
-                <a href="#">CSS</a>
+              <li class="active"  ng-repeat="category in categories">
+                <a href="#" ng-click="loadList(category)">{{category}}</a>
               </li>
-              <li class="active">
-                <a href="#">HTML</a>
-              </li>
-              <li class="active">
-                <a href="#">Javascript</a>
-              </li>
-              
-            </ul>
+            </ul>	
    		</div>
    		<div class="col-sm-10 rgt-side">
-   			<div class="col-sm-10 ">
-   				<a href="@">
-	   				<h3>Title 1</h3>
-	   				<p>Awesome Tutorial</p>
-   				</a>
-   			</div>
-   			<div class="col-sm-10 ">
-   				<a href="@">
-	   				<h3>Title 2</h3>
-	   				<p>Awesome Tutorial</p>
-   				</a>
-   			</div>
-   			<div class="col-sm-10 ">
-   				<a href="@">
-	   				<h3>Title 3</h3>
-	   				<p>Awesome Tutorial</p>
+   			<div class="col-sm-10 "  ng-repeat="model in models |filter :catFilter | limitTo  :10 ">
+   				<a href="$" >
+	   				<h3>{{model.mainheading}}</h3>
+	   				<p>{{model.desc}}</p>
    				</a>
    			</div>
    			<p class="col-sm-10 "><a href="#/catList">More</a></p>
