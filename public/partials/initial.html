@@ -17,7 +17,7 @@
    			<ul class="nav of nav-stacked">
               <li class="tq">Category</li>
               <li class="active"  ng-repeat="category in categories">
-                <a href="#" ng-click="loadList(category)">{{category}}</a>
+                <a href="#" ng-click="loadList(category)" ng-class="{'active': category == catFilter}">{{category}}</a>
               </li>
             </ul>	
    		</div>
@@ -28,6 +28,6 @@
 	   				<p>{{model.desc}}</p>
    				</a>
    			</div>
-   			<p class="col-sm-10 "><a href="#/catList">More</a></p>
+   			<p class="col-sm-10 "><a href="#/catList/{{catFilter}}">More</a></p>
    		</div>
    	</div>

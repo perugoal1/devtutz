@@ -101,7 +101,7 @@ body{
 	border-radius: 5px;
 	padding-left: 30px;
 }
-.bottom-section .nav-stacked li a:hover,.bottom-section .nav-stacked li a:focus{
+.bottom-section .nav-stacked li a:hover,.bottom-section .nav-stacked li a:focus,.bottom-section .nav-stacked li a.active{
 	color: #000;
 	background: #fff;
 }

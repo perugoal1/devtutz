@@ -11,8 +11,9 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 		controller:'intitialCtrl'
 	})
 	.state("catList",{
-		url:'/catList',
-		templateUrl:"/partials/categoryList.html"
+		url:'/catList/{moreCat}',
+		templateUrl:"/partials/categoryList.html",
+		controller:'moreCatCtrl'
 	})
 	.state("tutorials",{
 		url:'/tutorials',
@@ -72,4 +73,12 @@ app.controller('intitialCtrl',['$scope','model',function($scope,model){
 	$scope.loadList = function(category){
 		$scope.catFilter = category;
 	};
+}]);
+
+app.controller('moreCatCtrl',['$scope','$stateParams','model',function($scope,$stateParams,model){
+	$scope.models = model.lists;
+	$scope.categories = model.category;
+	
+		$scope.moreCatFilter = $stateParams.moreCat;
+	
 }]);
