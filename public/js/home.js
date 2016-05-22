@@ -24,6 +24,10 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 		url:'/tutorials',
 		templateUrl:"/partials/tutDetails.html"
 	})
+	.state("add",{
+		url:'/add',
+		templateUrl:"/partials/addPage.html"
+	});
 }]);
 
 
