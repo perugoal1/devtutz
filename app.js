@@ -37,7 +37,7 @@ http.createServer(app).listen(app.get('port'), function(){
 });
 
 
-app.get('/postdb',function(){
+app.get('/postdb',function(req,res){
 	var tutslist = new model({
 		 mainheading:"Blog1",
 		 desc:"Description of the awesome app 1",
@@ -52,7 +52,13 @@ app.get('/postdb',function(){
 	     });
 	
 	tutslist.save(function(err, thor) {
-		  if (err) return console.error(err);
-		  console.dir(thor);
+		  if (err) return console.error(err); 
+		  res.send('success');
 		});
+});
+
+app.get('/getinitialList',function(req,res){
+	model.find(function(err,list){
+		res.json(list);
+	});
 });

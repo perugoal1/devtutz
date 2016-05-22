@@ -8,7 +8,12 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 	.state("home",{
 		url:"/home",
 		templateUrl :"/partials/initial.html",
-		controller:'intitialCtrl'
+		controller:'intitialCtrl',
+		resolve: {
+		    postPromise: ['model', function(model){
+		      return model.getInitialList();
+		    }]
+		  }
 	})
 	.state("catList",{
 		url:'/catList/{moreCat}',
@@ -22,9 +27,17 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 }]);
 
 
-app.factory('model',function(){
-	
-	modelVar ={
+app.factory('model',['$http',function($http){
+	var modelVar ={
+			initialList	: [],
+			category:['HTML','CSS','Javascript']
+	};
+	modelVar.getInitialList = function(){
+		return $http.get('/getinitialList').success(function(data){
+			modelVar.initialList = angular.copy(data);
+		});
+	}
+	/*modelVar ={
 		lists : [{id:1,
 				 mainheading:"Blog1",
 				 desc:"Description of the awesome app 1",
@@ -38,14 +51,14 @@ app.factory('model',function(){
 				 prev:{id:"2"}
 			     }],
 		         
-		  category:['HTML','CSS','Javascript']
-	};
+		  
+	};*/
 	
 	return modelVar;
-});
+}]);
 
 app.controller('intitialCtrl',['$scope','model','$http',function($scope,model,$http){
-	$scope.models = model.lists;
+	$scope.models = model.initialList;
 	$scope.categories = model.category;
 	$scope.loadList = function(category){
 		$scope.catFilter = category;
