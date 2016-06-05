@@ -183,3 +183,25 @@ body{
 .svg-tut img{
 	border-radius: 50px;
 }
+.whiteBg{
+	background-color: #fff !important;
+}
+.mildDarkTxt{
+	color: #6B6B6B !important;
+}
+.addBox{
+	margin: 30px;
+	border: 3px dashed #555;
+	width: 80%;
+	height: 200px;
+	text-align: center;
+	cursor: cell;
+}
+.addBox:hover{
+	background-color:rgba(200,200,200,0.8); 	
+}
+.addBox span{
+	top: 35% !important;
+    font-size: 70px;
+	background: transparent;
+}
