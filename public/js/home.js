@@ -26,7 +26,8 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 	})
 	.state("add",{
 		url:'/add',
-		templateUrl:"/partials/addPage.html"
+		templateUrl:"/partials/addPage.html",
+		controller:'addPageController'
 	});
 }]);
 
