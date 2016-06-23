@@ -69,11 +69,7 @@ app.controller('intitialCtrl',['$scope','model','$http',function($scope,model,$h
 		$scope.catFilter = category;
 	};
 	
-	$scope.db = function(){
-		console.log('asdasd');
-		$http.get('/postdb');
-		
-	};
+	
 }]);
 
 app.controller('moreCatCtrl',['$scope','$stateParams','model',function($scope,$stateParams,model){

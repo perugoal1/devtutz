@@ -2,11 +2,21 @@
    		<div class="col-sm-12 lft-side container">
    			<div class="mildDarkTxt jumbotron">
 			  <h3>Build Your Tutorial</h3>
+			  <div class="input-group">
+				  <span class="input-group-addon " id="basic-addon1">Tutorial Title</span>
+				  <input type="text" class="form-control" placeholder="Enter the title of the tutorial" aria-describedby="Tutorial-Title" ng-model="mainheading">
+			   </div>
+			   <br>
+			   <div class="input-group">
+				  <span class="input-group-addon " id="basic-addon1">Brief Description</span>
+				  <input type="text" class="form-control" placeholder="Give a brief description of the tutorial" aria-describedby="Brief-Description" ng-model="desc">
+				</div>
+				<br>
 			  <div>
 			  	<textarea name="editor1"></textarea>
 			  </div>
 			  <br>
-			  <button ng-click="getData()">Save Tutorial</button>
+			  <button ng-click="saveData()">Save Tutorial</button>
 			</div>
    		</div>
    	</div>

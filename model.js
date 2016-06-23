@@ -15,7 +15,7 @@ mongoose.connect(config.host,function(){
 		 mainbg: String,
 		 tags:[],
 		 date:{date: String,value: Number},
-		 content:[contentSchema],
+		 content:[],
 		 prev:{id: String},
 		 next:{id: String}
 });

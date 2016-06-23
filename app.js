@@ -37,18 +37,14 @@ http.createServer(app).listen(app.get('port'), function(){
 });
 
 
-app.get('/postdb',function(req,res){
+app.post('/postdb',function(req,res){
 	var tutslist = new model({
-		 mainheading:"Blog1",
-		 desc:"Description of the awesome app 1",
+		 mainheading:req.body.mainheading,
+		 desc:req.body.desc,
 		 mainbg:"",
 		 tags:["html","css"],
 		 date:{date:"",value:"1451221619320"},
-		 content:[{seqno:'1',type:"heading",desc:"hey",src:""},
-		          {seqno:'2',type:"para",desc:"this is a para",src:""},
-		          {seqno:'1',type:"code",desc:"this is a code",src:""},
-		          {seqno:'1',type:"img",desc:"this is an img",src:""}],
-		 prev:{id:"2"}
+		 content: req.body.content
 	     });
 	
 	tutslist.save(function(err, thor) {
