@@ -21,8 +21,9 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 		controller:'moreCatCtrl'
 	})
 	.state("tutorials",{
-		url:'/tutorials',
-		templateUrl:"/partials/tutDetails.html"
+		url:'/tutorials/:tutsId',
+		templateUrl:"/partials/tutDetails.html",
+		controller:'tutDetailsCtrl'
 	})
 	.state("add",{
 		url:'/add',
@@ -32,16 +33,28 @@ app.config(['$stateProvider','$urlRouterProvider',function($stateProvider,$urlRo
 }]);
 
 
-app.factory('model',['$http',function($http){
+app.factory('model',['$http','$q',function($http,$q){
 	var modelVar ={
 			initialList	: [],
-			category:['HTML','CSS','Javascript']
+			category:['HTML','CSS','Javascript'],
+			tags:['HTML','CSS','Javascript','AngularJs','nodeJs','MongoDB','RestAPI','Jquey','LESS','Responsive Design']
 	};
 	modelVar.getInitialList = function(){
 		return $http.get('/getinitialList').success(function(data){
 			modelVar.initialList = angular.copy(data);
 		});
 	}
+	
+	modelVar.getDetails= function(id){
+		var deferred = $q.defer()
+		$http.get('/getDetails/'+ id).then(function(res){
+		   deferred.resolve(res.data);
+		});
+		return deferred.promise;
+	}
+	
+	
+	
 	/*modelVar ={
 		lists : [{id:1,
 				 mainheading:"Blog1",
@@ -64,6 +77,7 @@ app.factory('model',['$http',function($http){
 
 app.controller('intitialCtrl',['$scope','model','$http',function($scope,model,$http){
 	$scope.models = model.initialList;
+	$scope.homePageTags = model.tags;
 	$scope.categories = model.category;
 	$scope.loadList = function(category){
 		$scope.catFilter = category;
@@ -79,3 +93,33 @@ app.controller('moreCatCtrl',['$scope','$stateParams','model',function($scope,$s
 		$scope.moreCatFilter = $stateParams.moreCat;
 	
 }]);
+
+app.controller('tutDetailsCtrl',['$scope','$stateParams','model','$sce','$timeout','$anchorScroll', '$location',function($scope,$stateParams,model,$sce,$timeout,$anchorScroll,$location){
+    model.getDetails($stateParams.tutsId).then(function(data){
+    	$anchorScroll.yOffset = 70;
+    	$scope.tutsDetails = data;
+    	var navID=1;
+    	$scope.sideNav = [];
+    	$timeout(function () {
+    		$(".tutsDetailDiv").find('h2,h3,h4,h5,h6').each(function(){
+        		$(this).attr('id', "anchor"+navID);
+        		$scope.sideNav.push({val:$(this).text(),hrefVal:"anchor"+navID});
+        		navID += 1  ;
+        	});
+        }, 500);
+    	
+    	
+    	$scope.scrollTo = function(elementId) {
+                $location.hash(elementId);
+                $anchorScroll();
+    	  };
+    	
+	});
+}]);
+
+
+app.filter('html', function($sce) {
+    return function(val) {
+        return $sce.trustAsHtml(val);
+  };
+});

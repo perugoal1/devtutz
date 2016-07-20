@@ -3,12 +3,7 @@ var config = require('./config');
 mongoose.connect(config.host,function(){
 		console.log('mongodb connected');
 });
-	var contentSchema = new mongoose.Schema({
-		seqno: Number,
-		type: String,
-		desc: String,
-		src: String
-	});
+
 	var tutSchema = new mongoose.Schema({
 		 mainheading: String ,
 		 desc: String ,
@@ -19,8 +14,13 @@ mongoose.connect(config.host,function(){
 		 prev:{id: String},
 		 next:{id: String}
 });
+	
+	var tagsSchema = new mongoose.Schema({
+		 tags : []
+});
 
 	var Tuts = mongoose.model('Tuts',tutSchema);
+	var Tags = mongoose.model('Tags',tutSchema);
 
 
 

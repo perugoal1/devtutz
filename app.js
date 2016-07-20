@@ -58,3 +58,9 @@ app.get('/getinitialList',function(req,res){
 		res.json(list);
 	});
 });
+
+app.get('/getDetails/:id',function(req,res){
+	model.findOne({_id: req.params.id },function(err,list){
+		res.send(list);
+	});
+});

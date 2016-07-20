@@ -83,11 +83,11 @@ body{
 	 padding-bottom: 40px;
 }
 .bottom-section{
-	background: #524C4E/* url("/img/bottomBg1.jpg")  no-repeat center center fixed */;
 	background-size:100% 100%;
 	padding: 0;
 	height:auto;
-	height: 400px;
+	width: 100%;
+	
 }
 .bottom-section .lft-side{
 	background-color: #00b5ec; 
@@ -116,13 +116,13 @@ body{
 	height:100%;
 }
 .bottom-section .rgt-side div{
-	color: #E0DCDC;
+	color: #6b6666;
 	border: 2px solid #fff;
 	margin: auto;
 	margin: 10px;
 }
 .bottom-section .rgt-side div a{
-	color: #E0DCDC;
+	color: #6b6666;
 	display: inline-block;
 	width :100%;
 }
@@ -131,10 +131,15 @@ body{
 	margin: auto;
     margin-top: 80px;
 }
+.group-tiles.initialTile{
+	background: #e4e2e2;
+    padding-top: 50px;
+    border-radius: 20px;
+}
 .tile{
-	height: 150px;
-	width: 150px;
-	margin: 3px;
+	height: 350px;
+	width: 250px;
+	margin: 15px;
 	background-color: blue;
 	display : inline-block;
 	opacity: 0.6;
@@ -143,6 +148,11 @@ body{
 	border: 2px solid #CAD4CB;
 	text-decoration: none;
 	transition: 1s;
+} 
+
+a.tile p{
+	margin: 10px;
+    text-align: justify;
 }
 .tile:hover,.tile:focus{
 	box-shadow: 0px 0px 56px 15px #D2D2CA;
@@ -204,4 +214,28 @@ body{
 	top: 35% !important;
     font-size: 70px;
 	background: transparent;
+}
+.tutsDetailDiv{
+	border-radius: 20px;
+	margin-top: 30px;
+	padding-bottom: 30px;
+}
+.pos-fixed{
+	position: fixed;
+}
+.mt50{
+	margin-top: 50px;
+}
+.navbar-default{
+	z-index: 20;
+}
+.group-tiles.tag a{
+	height: auto;
+    width: auto;
+    min-width: 150px;
+    padding: 5px;
+    background: #fff200 ;
+    color: #000;
+    border-radius: 20px;
+    margin: 10px;
 }
