@@ -29,8 +29,18 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+app.get('/partials/addPage.html', function(req,res){
+	if(LoginToken == true){
+		res.sendfile("public/authPartials/addPage.html");
+	}
+	else{
+		res.render('index');
+	}
+});
 app.get('/partials/:filename', routes.partials);
 app.get('/users', user.list);
+
+
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server now listening on port ' + app.get('port'));
@@ -38,7 +48,7 @@ http.createServer(app).listen(app.get('port'), function(){
 
 
 app.post('/postdb',function(req,res){
-	var tutslist = new model({
+	var tutslist = new model.tuts({
 		 mainheading:req.body.mainheading,
 		 desc:req.body.desc,
 		 mainbg:"",
@@ -54,13 +64,29 @@ app.post('/postdb',function(req,res){
 });
 
 app.get('/getinitialList',function(req,res){
-	model.find(function(err,list){
+	model.tuts.find(function(err,list){
 		res.json(list);
 	});
 });
 
 app.get('/getDetails/:id',function(req,res){
-	model.findOne({_id: req.params.id },function(err,list){
+	model.tuts.findOne({_id: req.params.id },function(err,list){
 		res.send(list);
 	});
 });
+
+var LoginToken;
+app.post('/ValidateLogin',function(req,res){
+	model.login.findOne({user: req.body.user },function(err,list){
+		if(req.body.pass == list.password){
+		  LoginToken = true;
+		  res.send('Login Successful');
+		}
+		else{
+	      LoginToken = false;
+		  res.send('Login Failure');
+		}
+	});
+});
+
+

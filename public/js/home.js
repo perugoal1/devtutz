@@ -82,6 +82,14 @@ app.controller('intitialCtrl',['$scope','model','$http',function($scope,model,$h
 	$scope.loadList = function(category){
 		$scope.catFilter = category;
 	};
+	$scope.showAdd = false;
+	$scope.validateLogin = function(){
+		$http.post('/ValidateLogin',{user:$scope.user,pass:$scope.pass}).then(function(data){
+			if(data.data == 'Login Successful' ){
+				$scope.showAdd = true;
+			}
+		});
+	};
 	
 	
 }]);

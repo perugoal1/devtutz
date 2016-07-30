@@ -253,3 +253,6 @@ a.tile p{
 div[ui-view]{
 	    min-height: 550px;
 }
+nav.navbar-default{
+	z-index: 100;
+}

@@ -24,7 +24,7 @@
 		    </div>
 		    <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 	   		<ul class="nav navbar-nav">
-	   			<li><a href="javascript:void(0)" ui-sref="add">Add</a></li>
+	   			<li ng-show="showAdd"><a href="javascript:void(0)" ui-sref="add">Add</a></li>
 		        <li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><b>Tutorials</b><span class="caret"></span></a>
 		          <ul class="dropdown-menu">
@@ -70,16 +70,16 @@
 		      <div class="modal-body">
 		        <div class="input-group">
 				  <span class="input-group-addon glyphicon glyphicon-user" id="basic-addon1"></span>
-				  <input type="text" class="form-control" placeholder="Login" aria-describedby="basic-addon1">
+				  <input type="text" class="form-control" placeholder="Login" aria-describedby="basic-addon1" ng-model="user">
 				</div>
 				<br>
 				<div class="input-group">
 				  <span class="input-group-addon glyphicon glyphicon-option-horizontal" id="basic-addon1"></span>
-				  <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1">
+				  <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon1" ng-model="pass">
 				</div>
 		      </div>
 		      <div class="modal-footer">
-		        <button type="button" class="btn btn-info" data-dismiss="modal">Login</button>
+		        <button type="button" class="btn btn-info" data-dismiss="modal" ng-click="validateLogin()">Login</button>
 		      </div>
 	      </form>
 	    </div>

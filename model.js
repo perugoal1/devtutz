@@ -18,9 +18,15 @@ mongoose.connect(config.host,function(){
 	var tagsSchema = new mongoose.Schema({
 		 tags : []
 });
-
-	var Tuts = mongoose.model('Tuts',tutSchema);
-	var Tags = mongoose.model('Tags',tutSchema);
+	
+	var loginSchema = new mongoose.Schema({
+		 user : String,
+		 password : String
+});
+	var Tuts = {};
+	Tuts.tuts = mongoose.model('Tuts',tutSchema ,'Tuts');
+	Tuts.tags = mongoose.model('Tags',tagsSchema ,'Tags');
+	Tuts.login = mongoose.model('Login',loginSchema ,'Login');
 
 
 
