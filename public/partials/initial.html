@@ -13,9 +13,24 @@
    	
    	<div class="bottom-section row">
    		 <div class="group-tiles row initialTile">
-   				<a class="tile" href="#/tutorials/{{model._id}}" ng-repeat="model in models | limitTo  :10">
-	   				<h3>{{model.mainheading}}</h3>
-	   				<p>{{model.desc}}</p>
+   				<a class="tile curtain" href="#/tutorials/{{model._id}}" ng-repeat="model in models | limitTo  :10">
+	   				<div class="curtain__wrapper">
+					    <div class="curtain__panel curtain__panel--left">
+						      <h3>{{model.mainheading}}</h3>
+						    </div>
+						    
+						    <div class="curtain__content">
+						      <p>{{model.desc}}</p>
+						    </div>
+						    
+						  <div class="curtain__panel curtain__panel--right">
+						 </div> 
+				  </div>
    				</a>
    			</div>
    	</div>
+   	
+   	
+   	<div class="curtain">
+  		
+    </div>
