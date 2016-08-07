@@ -29,12 +29,14 @@ if ('development' == app.get('env')) {
 }
 
 app.get('/', routes.index);
+
+var LoginToken;
 app.get('/partials/addPage.html', function(req,res){
 	if(LoginToken == true){
 		res.sendfile("public/authPartials/addPage.html");
 	}
 	else{
-		res.render('index');
+		 res.redirect('/home');
 	}
 });
 app.get('/partials/:filename', routes.partials);
@@ -75,7 +77,7 @@ app.get('/getDetails/:id',function(req,res){
 	});
 });
 
-var LoginToken;
+
 app.post('/ValidateLogin',function(req,res){
 	model.login.findOne({user: req.body.user },function(err,list){
 		if(req.body.pass == list.password){
